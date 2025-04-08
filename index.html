@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Solar Surveillance Robot</title>
+
+  <!-- AOS Scroll Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <style>
     :root {
       --bg: #f5f5f5;
@@ -60,6 +64,11 @@
       border-radius: 5px;
       color: white;
       cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      transform: scale(1.05);
     }
 
     section {
@@ -68,18 +77,22 @@
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      animation: fadeIn 0.7s ease-in;
+      transition: box-shadow 0.3s ease;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    section:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     }
 
     img {
       max-width: 100%;
       border-radius: 10px;
       margin-top: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    img:hover {
+      transform: scale(1.03);
     }
 
     ul {
@@ -102,6 +115,19 @@
         align-items: flex-start;
       }
     }
+
+    #typewriter {
+      font-family: monospace;
+      font-size: 1.5em;
+      border-right: 2px solid var(--text);
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-align: center;
+      display: block;
+      margin: 30px auto 10px;
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -116,19 +142,23 @@
         <a href="#results">Results</a>
         <a href="#applications">Applications</a>
         <a href="#conclusion">Conclusion</a>
+        <a href="#credit">Credit</a>
       </nav>
       <button class="toggle-btn" onclick="toggleMode()">🌙/☀️</button>
     </div>
   </header>
 
   <main>
-    <section id="introduction">
+
+    <div id="typewriter"></div>
+
+    <section id="introduction" data-aos="fade-up">
       <h2>Introduction & Problem Statement</h2>
       <p><strong>Purpose:</strong> An autonomous robot for real-time monitoring and detection.</p>
       <p><strong>Problem:</strong> Traditional systems lack 24/7 automation. This solves that.</p>
     </section>
 
-    <section id="architecture">
+    <section id="architecture" data-aos="fade-up">
       <h2>System Architecture & Components</h2>
       <h3>Hardware</h3>
       <ul>
@@ -143,7 +173,7 @@
       </ul>
     </section>
 
-    <section id="features">
+    <section id="features" data-aos="fade-up">
       <h2>Key Features & Functions</h2>
 
       <h3>Object Detection</h3>
@@ -167,7 +197,7 @@
       <img src="remote.png" alt="Bluetooth Remote">
     </section>
 
-    <section id="results">
+    <section id="results" data-aos="fade-up">
       <h2>Results & Performance</h2>
       <ul>
         <li>Object Detection Accuracy</li>
@@ -176,7 +206,7 @@
       </ul>
     </section>
 
-    <section id="applications">
+    <section id="applications" data-aos="fade-up">
       <h2>Applications</h2>
       <ul>
         <li>Home and Industrial Surveillance</li>
@@ -184,7 +214,7 @@
       </ul>
     </section>
 
-    <section id="conclusion">
+    <section id="conclusion" data-aos="fade-up">
       <h2>Conclusion & Future Improvements</h2>
       <p>This robot provides smart, sustainable surveillance.</p>
       <ul>
@@ -193,24 +223,72 @@
         <li>Durable weatherproof build</li>
       </ul>
     </section>
+    <section id="credit" data-aos="zoom-in">
+      <h2>Credits</h2>
+     <div style="display: flex; align-items: center; flex-wrap: wrap; gap: 20px; background: var(--card); padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+     <img src="harith.jpg" alt="Harith Profile Photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" />
+     <div>
+       <p><strong>Name:</strong> Harith Abd Manan</p>
+       <p><strong>Phone:</strong> +6012-3456789</p>
+       <p><strong>Email:</strong> <a href="mailto:harith.abdmanan@gmail.com">harith.abdmanan@gmail.com</a></p>
+       <p><strong>Social:</strong>
+       <a href="https://www.instagram.com/yourusername" target="_blank" style="margin-right: 10px;">📸 Instagram</a>
+       </p>
+       </div>
+     </div>
+    </section>
 
     <footer>
       <p>Contact: <a href="mailto:harith.abdmanan@gmail.com">harith.abdmanan@gmail.com</a></p>
     </footer>
   </main>
 
+  <!-- AOS + Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
+    AOS.init();
+
     function toggleMode() {
       document.body.classList.toggle("dark");
     }
-    // Smooth scroll for anchor links
+
+    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth' });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
       });
     });
+
+    // Typing text animation
+    const words = [
+      "Aliff kontol.",
+      "AI-Powered Detection Enabled.",
+      "Precision Line Tracking Engaged.",
+      "Solar Charging Optimized."
+    ];
+    let i = 0, j = 0, current = '', isDeleting = false;
+
+    function type() {
+      current = words[i];
+      let displayed = isDeleting ? current.substring(0, j--) : current.substring(0, j++);
+      document.getElementById("typewriter").textContent = displayed;
+
+      if (!isDeleting && j === current.length + 1) {
+        isDeleting = true;
+        setTimeout(type, 1000);
+      } else if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % words.length;
+        setTimeout(type, 400);
+      } else {
+        setTimeout(type, isDeleting ? 50 : 100);
+      }
+    }
+
+    type();
   </script>
 </body>
 </html>
