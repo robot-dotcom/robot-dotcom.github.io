@@ -131,6 +131,32 @@
       margin: 30px auto 10px;
       max-width: 100%;
     }
+
+      .mini-section {
+      background-color: var(--bg); /* Or any color you like */
+      padding: 10px;
+      border-radius: 12px;
+      max-width: 300px;
+      margin: 20px auto;
+      font-size: 0.9em;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+   }
+
+    .mini-section a {
+    color: var(--text1);
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+   .mini-section a:hover {
+   background-color: rgba(255, 255, 255, 0.1);
+  }
+
   </style>
 </head>
 <body>
@@ -145,33 +171,18 @@
   <main>
     <section>
       <nav>
-        <section>
-        <a href="#introduction">Intro</a>
-        </section>
-        <section>
-        <a href="#architecture">Components</a>
-        </section>
-        <section>
-        <a href="#features">Features</a>
-        </section>
-        <section>
-        <a href="#results">Results</a>
-        </section>
-        <section> 
-        <a href="#applications">Applications</a>
-        </section>
-        <section> 
-        <a href="#conclusion">Conclusion</a>
-        </section>
-        <section>
-        <a href="#credit">Credit</a>
-        </section>
-        <section>
-        <a href="#application">Bluetooth Remote</a>
-        </section>
-        <section>
-        <a href="#video">Video</a>
-        </section>
+       <section class="mini-section">
+       <a href="#introduction">Intro</a>
+       <a href="#architecture">Components</a>
+       <a href="#features">Features</a>
+       <a href="#results">Results</a>
+       <a href="#applications">Applications</a>
+       <a href="#conclusion">Conclusion</a>
+       <a href="#credit">Credit</a>
+       <a href="#application">Bluetooth Remote</a>
+       <a href="#video">Video</a>
+       </section>
+
         <button class="toggle-btn" onclick="toggleMode()">🌙/☀️</button>
       </nav>
       
