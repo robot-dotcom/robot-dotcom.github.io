@@ -363,6 +363,64 @@ img[data-src] {
     max-width: 50%;
   }
 }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.team-member {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 3px solid var(--accent);
+}
+
+.member-info h3 {
+  color: var(--highlight);
+  margin: 0 0 5px;
+}
+
+.member-info p {
+  color: var(--text);
+  margin: 0 0 15px;
+  font-size: 0.9rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-links a {
+  color: var(--text1);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
@@ -547,17 +605,51 @@ img[data-src] {
 
     <section id="credit" data-aos="zoom-in">
       <h2>Credits</h2>
-      <div class="mini-section" style="background: var(--card); padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 15px;">
-          <img src="harith1.png" alt="Harith Profile Photo" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 4px 12px rgba(0,0,0,0.15);" loading="lazy">
-          <div style="text-align: center;">
-            <p><strong>Name:</strong> Harith Abd Manan</p>
-            <p><strong>Phone:</strong> <a href="tel:+60199550094">+60 19-955 0094</a></p>
-            <p><strong>Email:</strong> <a href="mailto:harith.abdmanan@gmail.com">harith.abdmanan@gmail.com</a></p>
-            <p><strong>Social:</strong>
-              <a href="https://www.instagram.com/yish_ami?igsh=N3pnN2hnN3l5c2Ex" target="_blank" rel="noopener noreferrer" style="margin: 0 5px;">📸 Instagram</a>
-              <a href="https://www.linkedin.com/in/harith-abd-manan" target="_blank" rel="noopener noreferrer" style="margin: 0 5px;">💼 LinkedIn</a>
-            </p>
+      
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="harith1.png" alt="Harith Profile Photo" loading="lazy">
+          <div class="member-info">
+            <h3>Harith Abd Manan</h3>
+            <p>Project Head</p>
+            <div class="contact-links">
+              <a href="mailto:harith.abdmanan@gmail.com">✉️ Email</a>
+              <a href="tel:+60199550094">📞 +60 19-955 0094</a>
+              <a href="https://www.instagram.com/yish_ami" target="_blank">📸 Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="member2.jpg" alt="Team Member 2 Photo" loading="lazy">
+          <div class="member-info">
+            <h3>Mohd Aliff Redzuan</h3>
+             <p>Project Assistant</p>
+            <div class="contact-links">
+              <a href="maliff256@gmail.com">✉️ Email</a>
+              <a href="tel:+60189817376">📞 +60 18-9817376</a>
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="member3.jpg" alt="Team Member 3 Photo" loading="lazy">
+          <div class="member-info">
+            <h3>Fakhrul Yazid</h3>
+            <p>Web Developer</p>
+            <div class="contact-links">
+              <a href="mailto:frostking05@gmail.com">✉️ Email</a>
+              <a href="tel:+60198774338">📞 +60 19-8774338</a>
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="member4.jpg" alt="Team Member 4 Photo" loading="lazy">
+          <div class="member-info">
+            <h3>DR. SAURDI BIN ISHAK</h3>
+            <p>Supervising Lecturer</p>
+            <div class="contact-links">
+              <a href="saurdy@uitm.edu.my">✉️ Email</a>
+              <a href="tel:+60198741580">📞 +60 198741580</a>
+            </div>
           </div>
         </div>
       </div>
@@ -685,10 +777,11 @@ img[data-src] {
 
     // Image carousel
     const images = [
-      {src: "image.jpg", alt: "Prototype front view"},
-      {src: "image1.jpg", alt: "Prototype side view"},
-      {src: "image2.jpg", alt: "Prototype top view"},
-      {src: "image3.jpg", alt: "Prototype component layout"},
+      {src: "proto1.jpg", alt: "Prototype front view"},
+      {src: "proto2.jpg", alt: "Prototype side view"},
+      {src: "proto3.jpg", alt: "Prototype top view"},
+      {src: "proto4.jpg", alt: "Prototype component layout"},
+      {src: "proto5.jpg", alt: "Prototype in action"}
     ];
     
     let index = 0;
