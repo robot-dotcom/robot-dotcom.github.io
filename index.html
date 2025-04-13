@@ -219,6 +219,7 @@ footer {
        <a href="#features">Features</a>
        <a href="#results">Results</a>
        <a href="#applications">Applications</a>
+       <a href="#prototype">Prototype</a>
        <a href="#conclusion">Conclusion</a>
        <a href="#credit">Credit</a>
        <a href="#application">Bluetooth Remote</a>
@@ -351,6 +352,17 @@ footer {
       </ul>
     </section>
 
+    <section id="prototype" data-aos="fade-up">
+      <h2>Prototype Showcase</h2>
+      <div style="text-align:center;">
+        <img id="carousel-img" src="proto1.jpg" alt="Prototype Image" style="max-width: 90%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); transition: 0.3s;">
+        <div style="margin-top: 15px;">
+          <button onclick="changeImage(-1)" class="toggle-btn">⏮️ Prev</button>
+          <button onclick="changeImage(1)" class="toggle-btn">Next ⏭️</button>
+        </div>
+      </div>
+    </section>    
+
     <section id="conclusion" data-aos="fade-up">
       <h2>Conclusion & Future Improvements</h2>
       <p>This robot provides smart, sustainable surveillance.</p>
@@ -448,6 +460,24 @@ footer {
     }
 
     type();
+
+    const images = [
+    "proto1.jpg", // Image 1
+    "proto2.jpg", // Image 2
+    "proto3.jpg", // Image 3
+    "proto4.jpg", // Image 4 (Add more if you want)
+    "proto5.jpg"  // Image 5
+  ];
+  
+  let index = 0; // Start with the first image
+  function changeImage(direction) {
+    index = (index + direction + images.length) % images.length; // Ensure it wraps around
+    document.getElementById("carousel-img").src = images[index]; // Change the image source
+  }
+  setInterval(function() {
+  changeImage(1);  // Automatically go to the next image every 3 seconds
+  }, 3000); // 3000ms = 3 seconds
+
   </script>
 </body>
 </html>
