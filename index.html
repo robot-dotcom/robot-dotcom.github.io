@@ -453,6 +453,58 @@ img[data-src] {
   transform: translateY(-5px) scale(1.1);
   background-color: var(--highlight);
 }
+
+/* Certificate Styles */
+.certificate-container {
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.a4-certificate {
+  width: 100%;
+  max-width: 595px;  /* A4 width in pixels at 72dpi */
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.a4-certificate-landscape {
+  width: 100%;
+  max-width: 842px;  /* A4 landscape width in pixels at 72dpi */
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.certificate-note {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.certificate-actions {
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+/* For print media */
+@media print {
+  .certificate-container {
+    page-break-inside: avoid;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .a4-certificate, .a4-certificate-landscape {
+    max-width: 100%;
+    height: auto;
+  }
+}
   </style>
 </head>
 <body>
@@ -478,6 +530,7 @@ img[data-src] {
         <a href="#applications">Applications</a>
         <a href="#prototype">Prototype</a>
         <a href="#conclusion">Conclusion</a>
+        <a href="#certificate">Certificate</a>
         <a href="#credit">Credits</a>
         <a href="#application">Bluetooth Remote</a>
         <a href="#video">Video</a>
@@ -633,6 +686,25 @@ img[data-src] {
         <li><strong>Wireless Charging:</strong> Implement induction charging stations for automatic recharging</li>
         <li><strong>Swarm Technology:</strong> Enable multiple robots to work together for large area coverage</li>
       </ul>
+    </section>
+
+    <section id="certificate" data-aos="fade-up">
+      <h2>Project Certification</h2>
+      <p>This project has been officially recognized and certified by:</p>
+      
+      <div class="certificate-container">
+        <!-- For vertical A4 certificate -->
+        <img src="sijil.png" alt="Project Certification" class="a4-certificate" loading="lazy">
+        
+        <!-- For horizontal A4 certificate (if yours is landscape) -->
+        <!-- <img src="certificate.jpg" alt="Project Certification" class="a4-certificate-landscape" loading="lazy"> -->
+        
+        <p class="certificate-note">Click on the certificate to view full size</p>
+      </div>
+      
+      <div class="mini-section certificate-actions">
+        <a href="certificate.jpg" target="_blank" rel="noopener noreferrer">View Full Certificate</a>
+      </div>
     </section>
 
     <section id="credit" data-aos="zoom-in">
